@@ -6,6 +6,12 @@ namespace Month
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите минимальную и максимальную температуру");
+            double min = Convert.ToInt32(Console.ReadLine());
+            double max = Convert.ToInt32(Console.ReadLine());
+            double ave = (min + max) / 2;
+            Console.WriteLine($"min= {min}; max= {max}; ave = {ave}");
+
             Console.WriteLine("Введите номер месяца");
             int month = Convert.ToInt32(Console.ReadLine());
             string MonthTitle = "";
@@ -49,6 +55,10 @@ namespace Month
                     break;
             }
             Console.WriteLine(MonthTitle);
+            if (month <= 3 && ave > 0)
+            {
+                Console.WriteLine("Дождливая зима");
+            }
         }
     }
 }
