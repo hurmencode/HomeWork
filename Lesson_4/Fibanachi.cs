@@ -2,25 +2,24 @@
 
 namespace recursiv
 {
-    class Fibanachi
+    class Program
     {
         static void Main(string[] args)
         {
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(Fib(n));
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(Fibonachi(number));
         }
-        static int Fib(int number)
+
+        static int Fibonachi(int n)
         {
-            if (number == 0 || number == 1)
+            if (n == 0 || n == 1)
             {
-                return number;
+                return n;
             }
             else
             {
-                return (number -1) + (number - 2);
+                return n - Fibonachi(1) + (n-1)-Fibonachi(1);
             }
-            
         }
-
     }
 }
