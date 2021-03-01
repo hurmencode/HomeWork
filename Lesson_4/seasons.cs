@@ -11,20 +11,30 @@ namespace seasons
             Summer,
             Autumn
         }
+
         static void Main(string[] args)
         {
-            int num = Seasons();
-            if (num > 12)
-            {
-                Console.WriteLine("Ошибка: введите число от 1 до 12");
-            }
-
+            Loop();
         }
 
-        static int Seasons()
+        static void Loop() // Рекурсия
         {
             Console.WriteLine("Введите номер месяца");
-            int numberMonth =Convert.ToInt32(Console.ReadLine());
+            int num = Convert.ToInt32(Console.ReadLine());
+            if (num <= 12) 
+            {
+                Seasons(num);
+            }
+            else if(num > 12)
+            {
+                Console.WriteLine("Ошибка: введите число от 1 до 12»");
+                Loop();
+            }
+            
+        }
+
+        static int Seasons(int numberMonth)
+        {
             switch (numberMonth)
             {
                 case 12:
