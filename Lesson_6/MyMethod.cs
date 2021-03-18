@@ -17,9 +17,9 @@ namespace method
         {
             string[,] fdgh = new string[4, 4] { 
                 { "15", "6", "1", "1" },
-                { "4", "4", "4", "4" },
+                { "4", "5", "6", "4" },
                 { "5", "6", "3", "4" },
-                { "7", "1", "8", "9" } };
+                { "7", "1", "hjg", "9" } };
             Method(fdgh);
         }
 
@@ -45,8 +45,7 @@ namespace method
                     bool result = int.TryParse(array[i, j], out number);// проверяем можноли конвертировать
                     if (result != true)
                     {
-                        int rank = array.Rank;
-                        throw new MyArrayDataException(massege: $"Неверный символ {array[i,j]} ");
+                        throw new MyArrayDataException(massege: $"Неверный символ {array[i,j]}\nКоординаты в матрице: [{i+1} {j+1}]");
                     }
                     else
                     {
